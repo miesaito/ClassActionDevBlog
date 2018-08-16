@@ -1,0 +1,31 @@
+$white: #FFF
+$green: #81BCB6
+$fontGreen: #3E5555
+$orange: #FF9922
+$bgGray: #FBFBFB
+$red: #e56f6f
+$borderGray: #ccc
+$bold: 500
+@mixin transition($i)
+  -webkit-transition: all $i
+  -moz-transition: all $i
+  -ms-transition: all $i
+  -o-transition: all $i
+  transition: all $i
+@mixin margin($top, $right, $bottom, $left)
+  margin: $top $right $bottom $left
+@mixin padding($top, $right, $bottom, $left)
+  padding: $top $right $bottom $left
+@mixin font($size, $weight, $color)
+  font-size: $size
+  font-weight: $weight
+  color: $color
+.flex
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  flex-wrap: wrap
+  flex-direction: row
+  justify-content: space-between
