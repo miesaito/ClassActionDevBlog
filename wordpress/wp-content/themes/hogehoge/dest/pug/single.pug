@@ -1,0 +1,33 @@
+| <?php get_header(); ?>
+.wrap.outline
+  .blogAbout
+    .TitleArea
+      | <?php if(have_posts()): ?>
+      | <?php while(have_posts()): the_post(); ?>
+      h1.blogTitle
+        | <?php the_title(); ?>
+      .PostDate
+        span.PostDateDay
+          | <?php the_time('Y/m/d'); ?>
+        | 公開
+    .blogContents
+      | <?php echo get_the_post_thumbnail(); ?>
+      | <?php the_content(); ?>
+    | <?php endwhile; ?>
+    | <?php endif; ?>
+    .backnumber
+      .backnumberTitle
+        | バックナンバー
+        | <?php $args = array('posts_per_page' => 5); ?>
+        | <?php $the_query = new WP_Query( $args ); ?>
+        | <?php if ( $the_query->have_posts() ) : while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
+        .backnumberColumn
+          figure.columnImg
+            | <?php echo get_the_post_thumbnail(); ?>
+          .columnTitle
+            | <?php the_title(); ?>
+            .columnDate
+              | <?php the_time('Y/m/d'); ?>
+        | <?php endwhile; ?>
+        | <?php endif; ?>
+

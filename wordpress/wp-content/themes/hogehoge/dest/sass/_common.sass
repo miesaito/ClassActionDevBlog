@@ -1,0 +1,220 @@
+//ヘッダー
+.header
+  width: 100%
+  background: $white
+  position: relative
+  padding: 0 45px
+  &Logo
+    display: inline-block
+    width: 140px
+    margin: 23px 20px 0 0
+    @include transition(.4s)
+    &:hover
+      opacity: .8
+    img
+      width: 100%
+  &Title
+    display: inline-block
+    font-size: 11px
+    vertical-align: top
+    margin: 35px 20px 0 10px
+  &BigMenu
+    display: inline-block
+    vertical-align: top
+    font-weight: $bold
+    li
+      display: inline-block
+      margin: 0 0 0 16px
+      a
+        display: inline-block
+        padding: 33px 0 30px 0
+        @include transition(.4s)
+        &:hover
+          border-bottom: 8px solid $green
+          padding: 33px 0 22px 0
+          color: $green
+  &RightArea
+    position: absolute
+    top: 8px
+    right: 45px
+  &SmallMenu
+    display: inline-block
+    li
+      display: inline-block
+      font-size: 12px
+      margin: 0 0 0 16px
+      border-bottom: solid 1px $white
+      @include transition(.4s)
+      &:hover
+        border-bottom: solid 1px $green
+  &Search
+    display: inline-block
+    margin-left: 16px
+    margin: 0 0 0 16px
+    border-bottom: solid 2px #eee
+    @include transition(.4s)
+    &:hover
+      border-bottom: solid 2px $green
+    &Icon
+      margin: 0 -7px 0 0
+      margin-right: -7px
+      color: #888
+    &TxtBox
+      border: none
+      @include padding(0, 0, 3px, 0)
+  &Action
+    &Btn
+      text-align: left
+      margin-left: 5px
+      @include font(10px, $bold, inherit)
+      padding: 4px 8px
+      border-radius: 4px
+      letter-spacing: .1em
+      background: $bgGray
+      border: solid 1px #eee 
+      display: inline-block
+      text-align: center
+      @include transition(.4s)
+      &:hover
+        border: solid 1px $green 
+        background: $green
+        color: $white
+    &Area
+      position: absolute
+      top: 40px
+      right: 0
+      text-align: right
+//セクション
+.section
+  width: 88%
+  margin: 0 auto
+
+//ラップ
+.wrap
+  width: 88%
+  margin: 50px auto
+
+.wrap1200,.smallWrap
+  width: 100%
+  max-width: 1260px
+  margin: 50px auto
+  padding: 0 30px
+
+.wrap400
+  width: 100%
+  max-width: 400px
+  margin: 50px auto
+  text-align: center
+  .btn02
+    width: 100%
+
+//メインエリア
+.mainArea
+  width: 70%
+  display: inline-block
+  background: $white
+  padding-right: 30px
+  &Btm
+    .prj
+      &List
+      &Img
+        height: 130px
+      &Title
+        font-size: 14px
+        line-height: 1.5
+//サイドエリア
+.sideArea
+  width: 29%
+  display: inline-block
+  vertical-align: top
+  .prj
+    &List
+      li
+        width: 100%
+        position: relative
+    &Img
+      width: 30%
+      height: 100px
+      display: inline-block
+      vertical-align: top
+      img
+        width: 200%
+    &Title
+      float: right
+      display: -webkit-box
+      -webkit-box-orient: vertical
+      -webkit-line-clamp: 3
+      overflow: hidden
+      width: 66%
+      font-size: 14px
+      vertical-align: top
+      line-height: 1.3
+      text-align: justify
+    &Cate
+      position: absolute
+      bottom: 0
+      right: 10px
+
+.harf
+  width: 49%
+  display: inline-block
+
+//タイトル
+.title
+  font-size: 30px
+  margin: 30px 0
+  text-align: center
+
+//サブタイトル
+.subTitle
+  font-weight: bold
+  font-size: 24px
+  border-left: solid 6px $green
+  padding-left: 4px
+  line-height: 1
+  margin-bottom: 20px
+.paging
+  &:after
+    contnt: ''
+    display: block
+    clear: both
+  color: $fontGreen
+  margin-bottom: 30px
+  &All
+    display: block
+    text-align: center
+  &Txt
+    display: block
+    width: 300px
+    margin: 0 auto
+    text-align: center
+  .prev,.next
+    background: $fontGreen
+    color: $white
+    font-size: 30px
+    width: 50%
+    text-align: center
+  .prev
+    float: left
+  .next
+    float: right
+    opacity: .8
+//フッター
+.footer
+  background: $fontGreen
+  color: #6d9393
+  padding: 30px 0
+  a
+    color: #6d9393
+    &:hover
+      opacity: .8
+  &Box
+    display: inline-block
+    vertical-align: top
+    margin-right: 30px
+  &Title
+    font-weight: bold
+    margin-bottom: 10px
+  &Copy
+    margin-top: 50px
+    text-align: center

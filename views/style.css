@@ -202,7 +202,7 @@ select
 {
     display: inline-block;
 
-    width: 70%;
+    width: 68%;
     padding-right: 20px;
 }
 .blogAbout .blogContents .contentsTitle
@@ -224,7 +224,7 @@ select
 {
     display: inline-block;
 
-    width: 260px;
+    width: 300px;
     height: 600px;
     padding: 20px 20px;
 
@@ -236,6 +236,40 @@ select
 .blogAbout .backnumberTitle
 {
     font-size: 12px; 
+
+    color: #ccc;
+}
+.blogAbout .backnumberColumn
+{
+    margin: 20px 0;
+}
+.blogAbout .backnumberColumn .columnImg
+{
+    display: inline-block;
+
+    width: 70px;
+
+    vertical-align: top;
+}
+.blogAbout .backnumberColumn .columnImg img
+{
+    width: 100%;
+}
+.blogAbout .backnumberColumn .columnTitle
+{
+    line-height: 1.2; 
+
+    display: inline-block;
+
+    width: 70%;
+
+    color: black;
+}
+.blogAbout .backnumberColumn .columnDate
+{
+    font-size: 15px;
+
+    margin-top: 5px;
 
     color: #ccc;
 }

@@ -1,0 +1,565 @@
+//プロジェクト
+.pcArea
+.prj
+  &List
+    letter-spacing: -.4em
+    display: inline-block
+    li
+      position: relative
+      word-break: break-all
+      vertical-align: top
+      letter-spacing: .2em
+      width: 24.5%
+      border: solid 1px #efefef
+      display: inline-block
+      cursor: pointer
+      text-align: left
+      overflow: hidden
+      margin-right: .5%
+      margin-bottom: 20px
+      padding-bottom: 70px
+      background: $white
+      &:nth-child(4n+1)
+        margin-left: 0
+      @include transition(.4s)
+      &:last-child
+        margin-left: 0
+      &:hover
+        border: solid 1px $green
+        opacity: .7
+      &>a
+        display: block
+  &Img
+    background: #fbfbfb
+    width: 100%
+    height: 200px
+    overflow: hidden
+    position: relative
+    background: $white
+    img
+      width: 100%
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+      @include transition(.4s)
+      &:hover
+        width: 130%
+  &Status
+    display: inline-block
+    background: $green
+    padding: 3px 4px
+    color: $white
+    margin-right: 8px
+    font-size: 12px
+    letter-spacing: .1em
+  &Top
+    width: 100%
+    background: rgba(255,255,255,.8)
+    position: absolute
+    top: 177px
+    font-size: 13px
+    padding: 0 0 0 4px
+    height: 23px
+  &Vic
+    width: 50%
+  &Dmg
+    width: 49%
+  &Vic,&Dmg
+    display: inline-block
+    text-align: center
+    letter-spacing: .2em
+  &Title
+    text-align: justify
+    background: $white
+    padding: 8px 8px 0 8px
+    font-size: 16px
+    font-weight: bold
+    display: -webkit-box
+    -webkit-box-orient: vertical
+    -webkit-line-clamp: 3
+    overflow: hidden
+  &Cate
+    font-size: 11px
+    padding: 0 0 8px 8px
+  &Under
+    letter-spacing: -.4em
+    background: #fbfbfb
+    width: 100%
+    position: absolute
+    bottom: 0
+    left: 0
+    font-size: 13px
+    padding: 8px
+    &Txt
+      font-weight: bold
+  &People,&Money
+    display: inline-block
+    margin-bottom: 4px
+  &People
+  &Bar
+    background: $white
+    height: 14px
+    border-radius: 10px;
+    overflow: hidden
+    margin: 0 4px
+    &On
+      width: 20%
+      background: $green
+      height: 18px
+  &Qa
+    display: inline-block
+    font-size: 10px
+
+
+//コメント
+.comment
+  margin: 20px
+  border-bottom: solid 1px #eee
+  padding-bottom: 10px
+  &Wrap
+    border: #eee solid 1px
+  &Box
+    background: #eee
+    padding: 20px
+  &Btn
+    display: inline-block
+    margin-right: 8px
+  &Name
+    border: 0
+    border-radius: 4px
+    padding: 4px
+    margin-bottom: 10px
+  &Area
+    width: 100%
+    height: 100px
+    border: 0
+    border-radius: 4px
+    padding: 4px
+  &Change
+    display: block
+    font-size: 15px
+    background: none
+    padding: 4px 10px
+    margin-top: 20px
+
+//sns
+.sns
+  margin: 20px 0
+  display: flex
+  li
+    width: 25%
+    text-align: center
+  a
+    display: block
+    color: $white
+    width: 100%
+    padding: 4px
+    font-size: 20px
+    @include transition(.4s)
+    &:hover
+      opacity: .8
+  .tw
+    background: #55acee
+  .fb
+    background: #3B5998
+  .hatena
+    background: #0066BD
+  .pocket
+    background: #EC374C
+
+//テーブル
+.table
+  display: table
+  width: 100%
+  border-bottom: solid 1px #e3e4e8
+  &Cell
+    display: table-cell
+    background: $white
+    padding: 8px 8px
+    border: solid 1px #e3e4e8
+    border-bottom: 0
+    textarea,input
+      width: 100%
+    &Checkbox
+      input
+        -webkit-appearance: checkbox
+        width: 10%
+    &Box
+      textarea
+        height: 500px
+  &Low
+    display: table-row
+  &Th
+    display: table-header-group
+  &Sub
+    font-size: 12px
+
+//テーブルスタイル
+.tableStyle
+  &01
+    .table
+      display: table
+      width: 100%
+      border-bottom: solid 1px #e3e4e8
+      &Cell
+        &:first-child
+          width: 30%
+          background: $bgGray
+          color: $fontGreen
+          border-top: solid 1px #e3e4e8
+          border-right: 0
+          vertical-align: top
+  &02
+    .table
+      display: table
+      width: 100%
+      border-bottom: solid 1px #e3e4e8
+      &Cell
+        &:first-child
+          width: 30%
+          background: $green
+          color: $white
+          border-top: solid 1px #e3e4e8
+          border-right: 0
+//ラインボタン
+.btn
+  &02,&Off
+    line-height: 1.4
+    margin: 30px auto 0 auto
+    padding: 8px
+    display: block
+    width: 100%
+    max-width: 600px
+    font-size: 15px
+    text-align: center
+    border-radius: 4px
+    background: $white
+    @include transition(.4s)
+  &02
+    border: solid 1px $green
+    color: $green
+    &:hover
+      background: $green
+      color: $white
+  &Off
+    border: solid 1px #ccc
+    color: #ccc
+    &:hover
+      background: #ccc
+      color: $white
+
+//btn
+.btn
+  border: none
+  background: $green
+  color: $white
+  padding: 8px 8px
+  border-radius: 4px
+  display: block
+  width: 100%
+  margin: 30px auto 0 auto
+  font-size: 20px
+  text-align: center
+  &:last-child
+    margin-right: 1%
+  &:hover
+    color: $white
+    opacity: .8
+.btn03
+  letter-spacing: .3em
+  border-bottom: solid 4px #e5891f
+  border: none
+  background: $orange url(../images/btn03check.png) no-repeat
+  background-position: top 15px right 15px
+  background-size: 32px 32px
+  color: $white
+  padding: 16px 16px
+  border-radius: 4px
+  display: block
+  width: 100%
+  margin: 30px auto 0 auto
+  font-size: 20px
+  text-align: center
+  &:last-child
+    margin-right: 1%
+  &:hover
+    color: $white
+    opacity: .8
+  &In
+    width: 100%
+    height: auto
+    background: none
+
+
+  &Check
+    color: $white
+    position: absolute
+    top: 15px
+    right: 15px
+    font-size: 30px
+.btnArea
+  margin-bottom: 30px
+  &:after
+    display: block
+    clear: both
+    height: 0px
+    visibility: hidden
+    content: "."
+  .btn,.btn02
+    width: 49%
+    display: inline-block
+    float: right
+
+  .btnOff
+    width: 49%
+    display: inline-block
+    float: left
+
+// .mypagebtnArea
+//   display: inline-block
+
+// .mypagebtn
+//   margin-top: 30px
+//   border: none
+//   border-bottom: solid 4px $fontGreen
+//   background: $green
+//   color: $white
+//   padding: 8px 8px
+//   border-radius: 4px
+//   display: inline-block
+//   width: 100%
+//   font-size: 20px
+//   text-align: center
+//   width: 49%
+//   &:first-child
+//     margin-right: 1%
+
+//formparts
+.form
+  padding: 30px
+  width: 500px
+  margin: 0 auto
+  text-align: center
+.txtBox
+  color: $fontGreen
+  border: solid 2px #eee
+  border-radius: 4px
+  display: inline-block
+  position: relative
+  margin: 10px 0
+  width: 100%
+  input[type='text'],input[type='password']
+    border: none
+    border-radius: 4px 0 0 4px
+    padding: 8px 4px 8px 8px
+    width: 100%
+    height: 40px
+    vertical-align: top
+    display: inline-block
+    vertical-align: bottom
+    font-size: 15px
+    &:focus
+      outline: 0
+.txtArea
+  border: solid 2px #eee
+  border-radius: 4px
+  textarea
+    padding: 8px 4px 8px 8px
+    width: 100%
+    min-height: 600px
+    border: 0
+    vertical-align: bottom
+    font-size: 15px
+    &:focus
+      outline: 0
+.topic
+  textarea
+    min-height: 200px
+
+
+.selectBox,.select
+  position: relative
+  background: $white
+  select
+    border: solid 2px #eee
+    display: inline-block
+    border-radius: 4px
+    padding: 10px 20px 10px 10px
+    vertical-align: top
+    background: $white url(../images/selectarrow.png) no-repeat
+    background-size: 10px 10px
+    background-position: top 14px right 7px
+    &:focus
+      outline: 0
+  input[type='submit']
+    display: inline-block
+    background: $green
+    color: $white
+    border: 0
+    padding: 3px 4px
+    border-radius: 4px
+    vertical-align: top
+    height: 40px
+    margin-left: 10px
+.prjArea
+  width: 100%
+  display: block
+  border: solid 2px #eee
+  border-radius: 4px
+  position: relative
+  margin: 10px 0
+  background: $white
+  textarea
+    padding: 8px 4px 8px 8px
+    width: 100%
+    min-height: 200px
+    border: 0
+    vertical-align: bottom
+    font-size: 15px
+    &:focus
+      outline: 0
+.txt
+  font-size: 12px
+.imp
+  background: $red
+  color: $white
+  font-size: 10px
+  padding-left: 5px
+  padding: 1px
+  border-radius: 2px
+.submit
+  background: #ccc
+  color: $white
+  border: none
+  padding: 8px 4px
+  height: 40p
+  width: 350px
+  font-size: 15px
+  border-radius: 4px
+  vertical-align: bottom
+    @include transition(.4s)
+  // &:hover
+  //   background: none
+  //   color: green
+  //   border: $green solid 1px
+.memo
+  font-size: 12px
+.vali
+  height: 20px
+  width: 20px
+  display: inline-block
+  //vertical-align: top
+  margin: 10px 4px 10px 10px;
+  font-size: 21px
+  color: $green
+  position: absolute
+  top: 2px
+  right: 35px
+  @include transition(.4s)
+  &Txt
+    font-size: 12px
+    color: red
+    height: 30px
+.no
+  color: red
+.on
+  opacity: 1
+.off
+  opacity: 0
+#pass
+  &Eye
+    color: #eee
+    font-size: 21px
+    position: absolute
+    top: 10px;
+    right: 9px;
+
+//利用規約・プライバシーポリシー
+.decimal
+  li
+    list-style: decimal
+
+.decimalZero
+  li
+    list-style-type: decimal-leading-zero
+
+.decimalLatin
+  li
+    list-style-type: lower-latin
+
+.clear:after
+  content: ""
+  display: block
+  clear: both
+
+
+.step
+  background: $green
+  font-size: .8em
+  padding: 4px 8px
+  margin-right: 8px
+  border-radius: 4px
+  display: inline-block
+
+.small
+  font-size: 12px
+
+.big
+  font-size: 20px
+  font-weight: bold
+
+
+.new
+  color: $red
+  font-weight: bold
+  vertical-align: top
+  font-size: 12px
+  letter-spacing: 1px
+.thanks
+  text-align: center
+  font-size: 18px
+.address
+  color: $green
+
+.error,.message
+  width: 100%
+  max-width: 600px
+  margin: 30px 0
+  padding: 8px
+  letter-spacing: .2em
+  text-align: justify
+  .valiTxt
+    height: auto
+.messageCenter
+  text-align: center
+.cate
+  margin: 0 0 10px 10px
+  font-size: 10px
+.spArea
+  display: none
+.headerBtnQaBox
+  text-align: right
+  width: 100%
+.headerBtnQa
+  display: inline-block
+  font-size: 11px
+  color: $fontGreen
+  @include transition(.4s)
+  border-bottom: 1px solid $fontGreen
+  cursor: pointer
+  &:hover
+    color: $green
+    border-bottom: solid 1px $green
+.num
+  font-weight: bold
+  font-family: 'Do Hyeon', sans-serif
+.forget
+  text-align: center
+  display: inherit
+.m20
+  margin-bottom: 20px
+.mt20
+  margin-top: 20px

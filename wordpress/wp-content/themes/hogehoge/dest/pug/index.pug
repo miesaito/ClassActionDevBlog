@@ -1,0 +1,46 @@
+| <?php get_header(); ?>
+.wrap.outline
+  .blogAbout
+    | <?php $args = array('posts_per_page' => -1); ?>
+    | <?php $the_query = new WP_Query( $args ); ?>
+    | <?php if ( $the_query->have_posts() ) : while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
+    .blogAboutDate
+      p.blogAboutMonth
+        //- | APR
+        | <?php echo get_post_time('M'); ?>
+      //- p.blogAboutDay
+      //-   | -03-
+      p.blogAboutYear
+        //- | 2018
+        | <?php the_time('Y'); ?>
+    ul
+      //- | <?php $args = array('posts_per_page' => -1); ?>
+      //- | <?php $the_query = new WP_Query( $args ); ?>
+      //- | <?php if ( $the_query->have_posts() ) : while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
+      li
+        a(href!= "<?php the_permalink(); ?>")
+          h3.blogAboutTitle
+            | <?php the_title(); ?>
+        p.blogAboutTxt
+          | <?php
+          |   $content  = get_the_content();
+          |   $text     = strip_tags( strip_shortcodes( $content ) );
+          | ?>
+          |
+          | <?php if(mb_strlen($text) > 100): ?>
+          | <?php $text = mb_substr($text, 0, 100); ?>
+          | <?php echo $text; ?>
+            .blogAboutMore
+              a(href!= "<?php the_permalink(); ?>")
+                | …続きをみる
+          | <?php else: ?>
+          | <?php echo $text; ?>
+          | <?php endif; ?>
+
+    | <?php endwhile; ?>
+    | <?php endif; ?>
+
+    //- | <?php endwhile; ?>
+    //- | <?php endif; ?>
+
+script.
