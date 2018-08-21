@@ -6,12 +6,9 @@
     | <?php if ( $the_query->have_posts() ) : while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
     .blogAboutDate
       p.blogAboutMonth
-        //- | APR
         | <?php echo get_post_time('M'); ?>
       //- p.blogAboutDay
-      //-   | -03-
       p.blogAboutYear
-        //- | 2018
         | <?php the_time('Y'); ?>
     ul
       //- | <?php $args = array('posts_per_page' => -1); ?>
@@ -26,21 +23,38 @@
           |   $content  = get_the_content();
           |   $text     = strip_tags( strip_shortcodes( $content ) );
           | ?>
-          |
-          | <?php if(mb_strlen($text) > 100): ?>
-          | <?php $text = mb_substr($text, 0, 100); ?>
           | <?php echo $text; ?>
-            .blogAboutMore
-              a(href!= "<?php the_permalink(); ?>")
-                | …続きをみる
-          | <?php else: ?>
-          | <?php echo $text; ?>
-          | <?php endif; ?>
-
+        span.blogAboutMore
+          a(href!= "<?php the_permalink(); ?>")
+            | …続きをみる
     | <?php endwhile; ?>
     | <?php endif; ?>
 
-    //- | <?php endwhile; ?>
-    //- | <?php endif; ?>
 
 script.
+  /* 100文字以下だったら…続きを見るを表示させる */
+  var Txt = document.getElementsByClassName('blogAboutTxt');
+  for(var i = 0; i < Txt.length; i++){
+    if(Txt[i].innerHTML.length > 100){
+      Txt[i].innerHTML = Txt[i].innerHTML.slice(0,101);
+      var more = document.getElementsByClassName('blogAboutMore');
+      more[i].style.display = 'block';
+    }
+    else{
+      more[i].style.display = 'none';
+    }
+  }
+  /* 同じ月だったら表示を消す */
+  var a = document.getElementsByClassName('blogAboutDate');
+  //- var b = a.innerHTML;
+  var b = [];
+  for(var j = 0; j < a.length; j++){
+    b[j] = a[j].innerHTML;
+  }
+  var arry = b.filter(function (x, i, self) {
+    return self.indexOf(x) === i;
+  });
+  console.log(arry);
+  //- for(var k = 0; arry.length; k++){
+  //-   return arry;
+  //- }

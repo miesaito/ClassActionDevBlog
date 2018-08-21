@@ -7,9 +7,8 @@
     <title>hogehoge</title>
   </head>
   <body>
-    <div class="home wrap">
-      <h1 class="title">hogeHogeBlog</h1>
-      <h2 class="subTitle">classActionDeveloperBlog</h2>
-    </div>
+    <div class="home wrap"><a href="<?php echo esc_url( home_url( '/' ) ); ?>">
+        <h1 class="title">hogeHogeBlog</h1>
+        <h2 class="subTitle">classActionDeveloperBlog</h2></a></div>
   </body>
 </html>
