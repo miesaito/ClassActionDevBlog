@@ -234,7 +234,9 @@ select
 }
 .nav .main .blogContents h2
 {
-    font-size: 20px;
+    font-size: 22px;
+    font-weight: bold;
+    line-height: 1.5;
 
     margin-bottom: 30px;
 }
@@ -365,12 +367,12 @@ select
     {
         font-size: 25px;
     }
-    .home .blogAbout
+    .blogAbout
     {
         margin-top: 40px;
         padding: 0 50px;
     }
-    .home .blogAbout ul
+    .blogAbout ul
     {
         padding-left: 60px;
     }
@@ -394,15 +396,15 @@ select
     {
         font-size: 25px;
     }
-    .home .blogAbout
+    .blogAbout
     {
         margin-top: 40px;
     }
-    .home .blogAbout .blogAboutDate
+    .blogAbout .blogAboutDate
     {
         margin: auto;
     }
-    .home .blogAbout ul
+    .blogAbout ul
     {
         margin-top: 40px;
         margin-left: 17%;
@@ -430,22 +432,22 @@ select
     {
         font-size: 20px;
     }
-    .home .blogAbout
+    .blogAbout
     {
         margin-top: 40px;
     }
-    .home .blogAbout .blogAboutDate
+    .blogAbout .blogAboutDate
     {
         margin: auto;
     }
-    .home .blogAbout ul
+    .blogAbout ul
     {
         margin: 30px 0 0 0;
         padding: 0 15px; 
 
         border: none;
     }
-    .home .blogAbout ul li
+    .blogAbout ul li
     {
         width: 100%;
     }
