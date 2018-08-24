@@ -5,7 +5,16 @@
       <?php if(have_posts()): ?>
       <?php while(have_posts()): the_post(); ?>
       <h1 class="blogTitle"><?php the_title(); ?></h1>
-      <div class="PostDate"><span class="PostDateDay"><?php the_time('Y/m/d'); ?></span>公開</div>
+      <div class="postDate"><span class="postDateDay"><?php the_time('Y/m/d'); ?></span>公開
+        <?php
+        $posttags = get_the_tags();
+        if ($posttags) {
+        foreach($posttags as $tag) {
+        echo '<div class="clipTag"><a href="'. get_tag_link($tag->term_id) .'">' . $tag->name . '</a></div>';
+        }
+        }
+        ?>
+      </div>
     </div>
     <div class="blogContents">
       <?php echo get_the_post_thumbnail(); ?>
@@ -27,7 +36,8 @@
             </div>
           </div></a><?php endwhile; ?>
         <?php endif; ?>
-      </div>
+      </div><a href="<?php echo home_url('/list'); ?>">
+        <div class="backnumberMore">もっとみる</div></a>
     </div>
   </div>
 </div>

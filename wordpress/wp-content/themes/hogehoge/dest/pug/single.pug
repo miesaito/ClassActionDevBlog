@@ -7,10 +7,20 @@
       | <?php while(have_posts()): the_post(); ?>
       h1.blogTitle
         | <?php the_title(); ?>
-      .PostDate
-        span.PostDateDay
+      .postDate
+        span.postDateDay
           | <?php the_time('Y/m/d'); ?>
         | 公開
+        //- .postTag
+        //- | <?php the_tags(''); ?>
+        | <?php
+        | $posttags = get_the_tags();
+        | if ($posttags) {
+        | foreach($posttags as $tag) {
+        | echo '<div class="clipTag"><a href="'. get_tag_link($tag->term_id) .'">' . $tag->name . '</a></div>';
+        | }
+        | }
+        | ?>
     .blogContents
       | <?php echo get_the_post_thumbnail(); ?>
       | <?php the_content(); ?>
@@ -33,6 +43,9 @@
                 | <?php the_time('Y/m/d'); ?>
         | <?php endwhile; ?>
         | <?php endif; ?>
+      a(href!= "<?php echo home_url('/list'); ?>")
+        .backnumberMore
+          | もっとみる
 
 script.
   /* 100文字以下だったら…続きを見るを表示させる */
