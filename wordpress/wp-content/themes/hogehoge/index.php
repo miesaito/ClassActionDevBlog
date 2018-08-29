@@ -37,7 +37,7 @@
     endif;
     ?>
   </div>
-</div>
+</div><?php get_footer(); ?>
 <script>
   /* 100文字以下だったら…続きを見るを表示させる */
   var Txt = document.getElementsByClassName('blogAboutTxt');

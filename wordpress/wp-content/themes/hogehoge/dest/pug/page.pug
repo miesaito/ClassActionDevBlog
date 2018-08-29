@@ -1,18 +1,23 @@
 | <?php get_header(); ?>
-.wrap.outline
-  .pageList
-    | <?php $args = array('posts_per_page' => -1); ?>
-    | <?php $the_query = new WP_Query( $args ); ?>
+.wrap.blog
+  .breadCrumb
+    .breadCrumbHome
+      a(href!= "<?php echo esc_url( home_url( '/' ) ); ?>")
+        | □
+    .breadCrumbNow
+      a(href!= "<?php echo esc_url( home_url( '/list' ) ); ?>")
+      | backnumber
+  .blogPage
+    | <?php $the_query = new WP_Query('posts_per_page=5&paged='.$paged); ?>
     | <?php if ( $the_query->have_posts() ) : while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
     ul
-      li
+      li.blogPageList
         a(href!= "<?php the_permalink(); ?>")
-          h3.pageListTitle
+          h3.blogPageListTitle
             | <?php the_title(); ?>
-        .pageListDate
-          | <?php the_date("Y/m/d"); ?>
-        a(href!= "<?php the_permalink(); ?>")
-          p.pageListTxt
+          .blogPageListDate
+            | <?php the_date("Y/m/d"); ?>
+          p.blogPageListTxt
             | <?php
             |   $content  = get_the_content();
             |   $text     = strip_tags( strip_shortcodes( $content ) );
@@ -20,12 +25,14 @@
             | <?php echo $text; ?>
     | <?php endwhile; ?>
     | <?php endif; ?>
+  | <?php if(function_exists('wp_pagenavi')) wp_pagenavi(array('query' => $the_query)); ?>
+| <?php get_footer(); ?>
 
 script.
   /* 100文字以下だったら…続きを見るを表示させる */
-  var Txt = document.getElementsByClassName('pageListTxt');
+  var Txt = document.getElementsByClassName('blogPageListTxt');
   for(var i = 0; i < Txt.length; i++){
-    if(Txt[i].innerHTML.length > 100){
-      Txt[i].innerHTML = Txt[i].innerHTML.slice(0,101)+"…";
+    if(Txt[i].innerHTML.length > 120){
+      Txt[i].innerHTML = Txt[i].innerHTML.slice(0,121)+"…";
     }
   }

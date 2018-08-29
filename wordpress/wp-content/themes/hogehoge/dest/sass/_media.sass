@@ -1,13 +1,31 @@
 @media screen and (min-width: 800px) and (max-width: 1000px)
-  .home
-    .blogAbout
-      margin-left: 10%
-      .main
-        .blogContents
+  .wrap
+    padding: 0 100px
+    .blog
+      &Contents
+        width: 100%
+        padding-right: 0px
+        .blogImg
           width: 100%
-          .attachment-post-thumbnail
+          height: auto
+          img
             width: 100%
-            height: 100%
+            height: auto
+      &sideArea
+        margin-left: 0px
+        width: 100%
+        .officialLink
+          border: 0px
+          margin-bottom: 10px
+          &Title
+            text-align: center
+        .backnumber
+          border: 0px
+          height: 520px
+          &Title
+            text-align: center
+      &ListArea
+        margin-left: 0
   .blogListArea
     margin-left: 5%
 @media screen and (min-width: 700px) and (max-width: 800px)
@@ -17,20 +35,39 @@
       font-size: 35px
     .subTitle
       font-size: 25px
-  .blogAbout
-    margin-top: 40px
-    padding: 0 50px
-    .main
-      .blogContents
+  .wrap
+    padding: 0 100px
+    .blog
+      &Contents
         width: 100%
-        .attachment-post-thumbnail
+        padding-right: 0px
+        .blogImg
           width: 100%
-          height: 100%
-    .blogAboutDate
-    ul
-      padding-left: 60px
-  .blogListArea
-    margin-left: 0
+          height: auto
+          img
+            width: 100%
+            height: auto
+      &sideArea
+        margin-left: 0px
+        width: 100%
+        .officialLink
+          border: 0px
+          margin-bottom: 10px
+          &Title
+            text-align: center
+        .backnumber
+          border: 0px
+          height: 520px
+          &Title
+            text-align: center
+      &ListArea
+        margin-left: 0
+      .breadCrumb
+        margin-top: 40px
+    .blogAbout
+      &Date
+      ul
+        padding-left: 60px
 
 
 @media screen and (min-width: 600px) and ( max-width: 700px)
@@ -40,25 +77,43 @@
       font-size: 35px
     .subTitle
       font-size: 25px
-  .blogAbout
-    margin-top: 40px
-    .main
-      .blogContents
+  .wrap
+    padding: 0 50px
+    .blog
+      &Contents
         width: 100%
-        .attachment-post-thumbnail
+        padding-right: 0px
+        .blogImg
           width: 100%
-          height: 100%
-    .blogAboutDate
-      margin: auto
-    ul
-      border: none
-      margin-left: 13%
-      margin-top: 40px
-      padding: 0px 15px
-      li
-        width: 380px
-  .blogListArea
-    margin-left: 0
+          height: auto
+          img
+            width: 100%
+            height: auto
+      &sideArea
+        margin-left: 0px
+        width: 100%
+        .officialLink
+          border: 0px
+          margin-bottom: 10px
+          &Title
+            text-align: center
+        .backnumber
+          border: 0px
+          height: 520px
+          &Title
+            text-align: center
+      &ListArea
+        margin-left: 0
+    .blogAbout
+      &Date
+        margin: auto
+      ul
+        border: none
+        margin-left: 13%
+        margin-top: 40px
+        padding: 0px 15px
+        li
+          width: 380px
 
 @media screen and (max-width: 600px)
   .home
@@ -67,34 +122,50 @@
       font-size: 30px
     .subTitle
       font-size: 20px
-  .nav
-    margin: 0 10%
-  .blogAbout
-    margin-top: 40px
-    .main
-      .TitleArea
-        .blogTitle
-          font-size: 18px
-          line-height: 1.5
-      .blogContents
+  .wrap
+    padding: 0 5%
+    .blog
+      &Contents
+        margin-top: 40px
         padding-right: 0px
         width: 100%
-        .attachment-post-thumbnail
+        h2
+          font-size: 18px
+        .TitleArea
+          .blogTitle
+            font-size: 22px
+            line-height: 1.5
+        .blogImg
           width: 100%
-          height: 100%
+          height: auto
           img
             width: 100%
-        h2
-          font-size: 16px
-    .blogAboutDate
-      margin: auto
-    ul
-      border: none
-      margin: 30px 0 0 0
-      padding: 0px 15px
-      li
+            height: auto
+      &sideArea
+        margin-left: 0px
         width: 100%
-    .backnumber
-      margin-left: 0px
-  .blogListArea
-    margin-left: 0
+        .officialLink
+          border: 0px
+          margin-bottom: 10px
+          &Title
+            text-align: center
+        .backnumber
+          border: 0px
+          height: 520px
+          &Title
+            text-align: center
+      &List
+        margin-left: 0
+        &Title
+          font-weight: bold
+    .blogAbout
+      &Date
+        margin: auto
+      ul
+        border: none
+        margin: 30px 0 0 0
+        padding: 0px 15px
+        li
+          width: 100%
+        .backnumber
+          margin-left: 0px

@@ -5,12 +5,17 @@
 | ?>
 
 | <?php get_header(); ?>
-.wrap.outline
-  a(href!= "<?php echo home_url('/tagall'); ?>")
-    .tagall
-      | TagAll
-  | <?php single_tag_title(); ?>に関するTips
-  .pageList
+.wrap.blog
+  .breadCrumb
+    .breadCrumbHome
+      a(href!= "<?php echo esc_url( home_url( '/' ) ); ?>")
+        | □
+    .breadCrumbAll
+      a(href!= "<?php echo home_url('/tagall'); ?>")
+        | TagAll
+    .breadCrumbNow
+      | <?php single_tag_title(); ?>
+  .blogPageList
     | <?php
     | $now_tag = single_tag_title('',false);
     | $tag_properties = get_term_by('name', $now_tag, 'post_tag');
@@ -19,7 +24,7 @@
 
     | <?php
     | $arg   = array(
-    |     'posts_per_page' => 5, // 表示する件数
+    |     'posts_per_page' => -1, // 表示する件数
     |     'orderby'        => 'date', // 日付でソート
     |     'order'          => 'DESC', // DESCで最新から表示、ASCで最古から表示
     |     'tag'            => $now_tag_slug // 表示したいタグのスラッグを指定
@@ -34,12 +39,12 @@
       | ?>
       li
         a(href!= "<?php the_permalink(); ?>")
-          h3.pageListTitle
+          h3.blogPageListTitle
           | <?php the_title(); ?>
-        .pageListDate
+        .blogPageListDate
           | <?php the_time( 'Y.m.d' ); ?>
         a(href!= "<?php the_permalink(); ?>")
-          p.pageListTxt
+          p.blogPageListTxt
             | <?php
             |   $content  = get_the_content();
             |   $text     = strip_tags( strip_shortcodes( $content ) );
@@ -50,10 +55,11 @@
     | endif;
     | wp_reset_postdata();
     | ?>
+| <?php get_footer(); ?>
 
 script.
   /* 100文字以下だったら…続きを見るを表示させる */
-  var Txt = document.getElementsByClassName('pageListTxt');
+  var Txt = document.getElementsByClassName('blogPageListTxt');
   for(var i = 0; i < Txt.length; i++){
     if(Txt[i].innerHTML.length > 100){
       Txt[i].innerHTML = Txt[i].innerHTML.slice(0,101)+"…";
